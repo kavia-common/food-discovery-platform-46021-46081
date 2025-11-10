@@ -1,0 +1,257 @@
+:root{
+  /* Color system */
+  --bg-canvas:#ffffff;
+  --green-hero:#6BBE6B;
+  --green-hero-inner:#7BCB7B;
+  --green-accent:#2FA84E;
+  --text-primary:#222222;
+  --text-secondary:#444444;
+  --text-muted:#5A5A5A; /* slightly darker for contrast */
+  --button-text:#ffffff;
+
+  /* Effects */
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
+  --shadow-strong: 0 20px 50px rgba(0,0,0,0.12);
+
+  /* Sizing helpers */
+  --canvas-w:1280;
+  --canvas-h:720;
+
+  /* Type scale */
+  --fs-nav:14px;
+  --fs-h1:48px;
+  --lh-h1:72px;
+  --fs-h2:28px;
+  --lh-h2:36px;
+  --fs-p:14px;
+  --lh-p:24px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg-canvas);
+  font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color:var(--text-primary);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+
+/* Print safety */
+@media print{
+  .hero-circles,.hero-images,.nav-circle{ display:none !important }
+}
+
+/* Fluid wrapper preserving 1280x720 fidelity at desktop */
+.screen-1280x720{
+  position:relative;
+  width:min(100vw, 1280px);
+  aspect-ratio: 1280 / 720;
+  max-height: 100vh;
+  margin-inline:auto;
+  overflow:hidden;
+  background:var(--bg-canvas);
+  contain: layout paint size;
+}
+
+/* Hero circular background based on Figma ellipses */
+.hero-circles{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+.circle{position:absolute;border-radius:50%}
+/* Tune big arc to match screenshot based on YAML: x:-411,y:-1306,size:1176 */
+.circle-large{
+  inline-size:1176px; block-size:1176px;
+  right:calc(0px - 317px); /* slightly adjust to mimic Figma arc crop */
+  top:calc(0px - 700px);
+  background:var(--green-hero);
+  -webkit-mask-image: radial-gradient(circle, #000 70%, transparent 71%);
+          mask-image: radial-gradient(circle, #000 70%, transparent 71%); /* safari fix: safe no-op if unsupported */
+}
+.circle-inner{
+  inline-size:560px; block-size:560px;
+  right:300px;
+  top:160px;
+  background:var(--green-hero-inner);
+}
+
+/* Navigation bar */
+.nav-bar{
+  position:absolute;
+  inset-inline-start:100px; inset-block-start:29px;
+  inline-size:calc(100% - 200px);
+  max-inline-size:1072px; block-size:27px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.logo{display:flex;align-items:center;gap:12px;inline-size:138px;block-size:27px;text-decoration:none}
+.logo-icon{inline-size:24px;block-size:15px;display:block}
+.logo-text{font-weight:600;font-size:18px;letter-spacing:.2px;color:var(--text-primary)}
+
+.nav-center{display:flex;gap:36px;justify-content:center;align-items:center}
+.nav-item{
+  font-size:var(--fs-nav);font-weight:500;color:var(--text-secondary);
+  text-decoration:none;line-height:21px;
+  transition:color .15s ease;
+}
+.nav-item:hover,.nav-item:focus{color:var(--text-primary);outline:none}
+
+/* Lock icon cluster */
+.lock{position:relative;inline-size:24px;block-size:24px;display:block}
+.lock-body{position:absolute;inline-size:18px;block-size:11px;inset-inline-start:3px;inset-block-start:11px}
+.lock-shackle{position:absolute;inline-size:10px;block-size:9px;inset-inline-start:7px;inset-block-start:0}
+
+/* Left content column (FRAME Content) */
+.content{
+  position:absolute;
+  inset-inline-start:100px; inset-block-start:307px;
+  inline-size:341px;
+}
+.title-1{
+  margin:0 0 12px 0;
+  font-size:var(--fs-h1);line-height:var(--lh-h1);font-weight:800;color:var(--green-accent);
+}
+.title-2{
+  margin:0 0 12px 0;
+  font-size:var(--fs-h2);line-height:var(--lh-h2);font-weight:700;color:var(--text-primary);
+}
+.copy{
+  margin:0;
+  inline-size:341px;
+  font-size:var(--fs-p);line-height:var(--lh-p);color:var(--text-muted);
+}
+
+/* CTA button (Hunt Now) */
+.btn-cta{
+  position:absolute; inset-inline-start:0; inset-block-start:473px;
+  display:inline-flex; align-items:center; justify-content:center;
+  inline-size:163px;block-size:50px;border-radius:8px;
+  background:var(--green-accent); color:var(--button-text);
+  font-weight:700;font-size:16px;letter-spacing:.2px;text-decoration:none;
+  box-shadow:var(--shadow-soft);
+  transition:transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+.btn-cta:hover{transform:translateY(-1px);box-shadow:var(--shadow-strong)}
+.btn-cta:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(47,168,78,0.35)}
+.btn-underline{position:absolute;inset-inline-start:6px;inset-block-end:12px;inline-size:6px;block-size:2px;background:rgba(255,255,255,0.6);border-radius:2px}
+
+/* Right hero image cluster */
+.hero-images{
+  position:absolute;
+  inset-inline-start:558px; inset-block-start:150px;
+  inline-size:630px; block-size:672px; pointer-events:none;
+}
+
+/* Central main dish */
+.img-center-main{
+  position:absolute; inset-inline-start:35px; inset-block-start:316px;
+  inline-size:255px; block-size:287px; object-fit:cover; border-radius:50%;
+  box-shadow:var(--shadow-soft); background:#fff; pointer-events:auto;
+  image-rendering: -webkit-optimize-contrast; /* safari */
+}
+
+/* Small images placed per YAML offsets within 'circle images' group */
+.img{
+  position:absolute; inline-size:101px; block-size:100px; object-fit:cover; border-radius:50%;
+  background:#fff; box-shadow:var(--shadow-soft);
+}
+.img-center-small{inset-inline-start:126px;inset-block-start:0;inline-size:100.34px;block-size:100px;border-radius:50%}
+.img-1{inset-inline-start:304px;inset-block-start:66px}      /* 3:43 */
+.img-2{inset-inline-start:393px;inset-block-start:212px}     /* 3:44 */
+.img-3{inset-inline-start:393px;inset-block-start:366px}     /* 6:7  */
+.img-4{inset-inline-start:304px;inset-block-start:498px}     /* 6:6  */
+.img-5{inset-inline-start:-35px;inset-block-start:66px}      /* 3:5  */
+.img-6{inset-inline-start:-35px;inset-block-start:498px}     /* 6:8  */
+.img-7{inset-inline-start:-136px;inset-block-start:212px}    /* 3:4  */
+.img-8{inset-inline-start:-136px;inset-block-start:366px}    /* 6:9  */
+
+/* Small center badge (42x42) */
+.badge{position:absolute;inset-inline-start:142px;inset-block-start:327px;inline-size:42px;block-size:42px;border-radius:50%;object-fit:cover;box-shadow:var(--shadow-soft);background:#fff}
+
+/* Bottom navigate circles */
+.nav-circle{position:absolute;inline-size:56.57px;block-size:56.57px;border-radius:50%}
+.nav-circle-left{
+  inset-inline-start:566px; inset-block-start:526px;
+  display:flex; align-items:center; justify-content:center;
+  background: #ffffffAA;
+  backdrop-filter: saturate(120%) blur(0.5px);
+}
+.nav-circle-left img{inline-size:45.97px;block-size:45.97px}
+.nav-circle-right{
+  inset-inline-start:1095px; inset-block-start:526px;
+  background:var(--green-accent);
+  box-shadow:var(--shadow-soft);
+}
+
+/* Hover/focus effects for images */
+.hero-images .img,
+.hero-images .img-center-small,
+.hero-images .badge,
+.img-center-main{
+  transition:transform 160ms ease;
+  -webkit-transition: -webkit-transform 160ms ease;
+  will-change: transform;
+}
+.hero-images .img:hover,
+.hero-images .img-center-small:hover,
+.hero-images .badge:hover,
+.img-center-main:hover{ -webkit-transform:scale(1.04); transform:scale(1.04) }
+
+/* Basic responsiveness while preserving desktop composition */
+@media (max-width: 1280px){
+  .screen-1280x720{ inline-size:100vw }
+  .nav-bar{
+    inset-inline-start:calc(100px * (100vw / 1280));
+    inset-block-start:calc(29px * (100vw / 1280));
+    inline-size:calc(100% - 2 * (100px * (100vw / 1280)));
+  }
+  .content{
+    inset-inline-start:calc(100px * (100vw / 1280));
+    inset-block-start:calc(307px * (100vw / 1280));
+  }
+  .btn-cta{ inset-block-start:calc(473px * (100vw / 1280)) }
+  .hero-images{
+    inset-inline-start:calc(558px * (100vw / 1280));
+    inset-block-start:calc(150px * (100vw / 1280));
+    -webkit-transform:scale(calc(100vw / 1280));
+            transform:scale(calc(100vw / 1280));
+    transform-origin: top left;
+  }
+  .circle-large{
+    right:calc(-317px * (100vw / 1280));
+    top:calc(-700px * (100vw / 1280));
+  }
+  .circle-inner{
+    right:calc(300px * (100vw / 1280));
+    top:calc(160px * (100vw / 1280));
+  }
+}
+
+/* Tablet stacking fallback */
+@media (max-width: 900px){
+  .content{ inline-size:min(420px, 60vw) }
+  .copy{ font-size:clamp(12px, 1.6vw, 14px) }
+  .title-1{ font-size:clamp(36px, 5vw, 48px); line-height:clamp(48px, 6.2vw, 72px) }
+  .title-2{ font-size:clamp(22px, 3vw, 28px) }
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce){
+  .App-logo{ animation:none }
+  .hero-images .img,
+  .hero-images .img-center-small,
+  .hero-images .badge,
+  .img-center-main{ transition:none; -webkit-transition:none }
+}
+
+/* Increased contrast preference */
+@media (prefers-contrast: more){
+  .btn-cta{ box-shadow: 0 0 0 3px rgba(0,0,0,0.15) }
+  .nav-item{ color: var(--text-primary) }
+}
