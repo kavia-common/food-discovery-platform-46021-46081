@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Avocado Toast",
+    "category": "Breakfast",
+    "description": "Toasted sourdough topped with smashed avocado and cherry tomatoes.",
+    "fullDescription": "A perfect start to your day with crispy sourdough toast topped with creamy smashed avocado, cherry tomatoes, a sprinkle of chili flakes, and a drizzle of olive oil.",
+    "ingredients": ["Sourdough bread", "Avocado", "Cherry tomatoes", "Olive oil", "Chili flakes", "Salt"],
+    "price": 8.5,
+    "rating": 4.5,
+    "image": "/assets/figmaimages/figma_image_3_4.png"
+  },
+  {
+    "id": 2,
+    "name": "Berry Parfait",
+    "category": "Breakfast",
+    "description": "Layers of yogurt, granola, and fresh berries.",
+    "fullDescription": "Greek yogurt layered with crunchy granola and a medley of fresh seasonal berries, lightly sweetened with honey.",
+    "ingredients": ["Greek yogurt", "Granola", "Strawberries", "Blueberries", "Honey"],
+    "price": 6.0,
+    "rating": 4.2,
+    "image": "/assets/figmaimages/figma_image_3_5.png"
+  },
+  {
+    "id": 3,
+    "name": "Chicken Caesar Wrap",
+    "category": "Lunch",
+    "description": "Grilled chicken, romaine, parmesan, and Caesar dressing.",
+    "fullDescription": "A hearty wrap stuffed with grilled chicken, crisp romaine lettuce, shaved parmesan, and classic Caesar dressing.",
+    "ingredients": ["Flour tortilla", "Chicken breast", "Romaine lettuce", "Parmesan", "Caesar dressing"],
+    "price": 9.75,
+    "rating": 4.3,
+    "image": "/assets/figmaimages/figma_image_3_43.png"
+  },
+  {
+    "id": 4,
+    "name": "Quinoa Bowl",
+    "category": "Lunch",
+    "description": "Protein-rich quinoa with roasted veggies and tahini.",
+    "fullDescription": "Nutty quinoa paired with roasted seasonal vegetables, chickpeas, and a lemon-tahini drizzle.",
+    "ingredients": ["Quinoa", "Chickpeas", "Broccoli", "Carrots", "Tahini", "Lemon"],
+    "price": 10.25,
+    "rating": 4.4,
+    "image": "/assets/figmaimages/figma_image_6_6.png"
+  },
+  {
+    "id": 5,
+    "name": "Spaghetti Pomodoro",
+    "category": "Dinner",
+    "description": "Classic pasta with tomato-basil sauce.",
+    "fullDescription": "Al dente spaghetti tossed in a vibrant tomato-basil sauce, finished with extra virgin olive oil and parmesan.",
+    "ingredients": ["Spaghetti", "Tomatoes", "Garlic", "Basil", "Olive oil", "Parmesan"],
+    "price": 12.5,
+    "rating": 4.6,
+    "image": "/assets/figmaimages/figma_image_3_44.png"
+  },
+  {
+    "id": 6,
+    "name": "Grilled Salmon",
+    "category": "Dinner",
+    "description": "Salmon fillet with lemon herb butter.",
+    "fullDescription": "Perfectly grilled salmon topped with lemon herb butter, served with seasonal vegetables.",
+    "ingredients": ["Salmon", "Butter", "Lemon", "Parsley", "Garlic"],
+    "price": 18.0,
+    "rating": 4.8,
+    "image": "/assets/figmaimages/figma_image_6_7.png"
+  },
+  {
+    "id": 7,
+    "name": "Veggie Tacos",
+    "category": "Dinner",
+    "description": "Corn tortillas with spiced veggies and salsa.",
+    "fullDescription": "Warm corn tortillas filled with spiced roasted vegetables, pico de gallo, and a touch of crema.",
+    "ingredients": ["Corn tortillas", "Bell peppers", "Onions", "Zucchini", "Pico de gallo", "Crema"],
+    "price": 11.0,
+    "rating": 4.1,
+    "image": "/assets/figmaimages/figma_image_6_8.png"
+  },
+  {
+    "id": 8,
+    "name": "Trail Mix Bites",
+    "category": "Snacks",
+    "description": "Nutty, chewy energy bites.",
+    "fullDescription": "Bite-sized energy snacks made with oats, nuts, seeds, and a hint of maple syrup.",
+    "ingredients": ["Oats", "Almonds", "Pumpkin seeds", "Maple syrup", "Peanut butter"],
+    "price": 4.0,
+    "rating": 3.9,
+    "image": "/assets/figmaimages/figma_image_3_42.png"
+  },
+  {
+    "id": 9,
+    "name": "Sweet Potato Fries",
+    "category": "Snacks",
+    "description": "Crispy fries with aioli.",
+    "fullDescription": "Hand-cut sweet potato fries, served hot with a garlic-lime aioli.",
+    "ingredients": ["Sweet potatoes", "Oil", "Salt", "Garlic", "Lime", "Mayonnaise"],
+    "price": 5.5,
+    "rating": 4.0,
+    "image": "/assets/figmaimages/figma_image_6_9.png"
+  },
+  {
+    "id": 10,
+    "name": "Iced Matcha Latte",
+    "category": "Drinks",
+    "description": "Creamy matcha over ice.",
+    "fullDescription": "Premium matcha whisked with milk and poured over ice for a refreshing pick-me-up.",
+    "ingredients": ["Matcha", "Milk", "Ice", "Vanilla syrup"],
+    "price": 5.0,
+    "rating": 4.7,
+    "image": "/assets/figmaimages/figma_image_3_6.png"
+  },
+  {
+    "id": 11,
+    "name": "Citrus Spritz",
+    "category": "Drinks",
+    "description": "Sparkling citrus refresher.",
+    "fullDescription": "A bubbly blend of grapefruit, lemon, and soda with a sprig of mint.",
+    "ingredients": ["Grapefruit", "Lemon", "Soda water", "Mint", "Ice"],
+    "price": 4.5,
+    "rating": 4.3,
+    "image": "/assets/figmaimages/figma_image_3_43.png"
+  },
+  {
+    "id": 12,
+    "name": "Chocolate Brownie",
+    "category": "Snacks",
+    "description": "Fudgy brownie with walnuts.",
+    "fullDescription": "Rich chocolate brownie with crunchy walnuts and a crackly top.",
+    "ingredients": ["Cocoa", "Flour", "Sugar", "Butter", "Eggs", "Walnuts"],
+    "price": 3.75,
+    "rating": 4.6,
+    "image": "/assets/figmaimages/figma_image_3_44.png"
+  }
+]
